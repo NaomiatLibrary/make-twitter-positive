@@ -14,6 +14,9 @@ export const SetTwitterInfos:React.FC<{
     props.set_access_token_secret(response.data.access_token_secret);
     props.set_user_id(response.data.user_id);
     props.set_screen_name(response.data.screen_name);
-  })
+  }).catch(e=> {
+    console.log(e)
+    return <p>Twitter Authentication Error!</p>;
+  })  
   return <p>Loading...</p>;
 };
